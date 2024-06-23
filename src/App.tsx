@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import Loader from './components/Loader';
 import Product from './components/Product';
-import { products } from './data/products';
+import useProducts  from './hooks/products';
+import Error from './components/Error';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { loading, error, products} = useProducts();
   return (
-    <div className="container flex flex-wrap gap-3 mx-auto max-w-2xl pt-5">
-      <Product product={products[0]}/>
-      <Product product={products[1]}/>
-
+    <div className="container flex flex-wrap justify-center p-2 gap-2 mx-auto pt-5">
+      { loading && <Loader/>}
+      { error && <Error error={error} />}
+      { products.map(product => <Product product={product} key={product.id} />)}
     </div>
   );
 }
