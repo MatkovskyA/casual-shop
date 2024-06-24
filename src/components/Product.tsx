@@ -24,7 +24,7 @@ function Product ({ product }: ProductProps) {
             </span>
             <button className={btnClasses.join(' ')} onClick={() =>setDetails(!details)}>{details ? "Hide details" : "Show details"}</button>
             {details && <p className="break-words">{product.description}</p>}
-            <span className="block">Рейтинг:{product.rating.rate} / 5 (Оценок: {product.rating.count})</span>
+            <span className="block">Рейтинг:{product?.rating?.rate} / 5 (Оценок: {product?.rating?.count})</span>
           </div>
         </div>
       </div>

@@ -1,17 +1,22 @@
-import Loader from './components/Loader';
-import Product from './components/Product';
-import useProducts  from './hooks/products';
-import Error from './components/Error';
+import { Route, Routes } from "react-router-dom";
+import Products from "./pages/Products";
+import AboutUs from "./pages/AboutUs";
+import Contacts from "./pages/Contacts";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
-  const { loading, error, products} = useProducts();
   return (
-    <div className="container flex flex-wrap justify-center p-2 gap-2 mx-auto pt-5">
-      { loading && <Loader/>}
-      { error && <Error error={error} />}
-      { products.map(product => <Product product={product} key={product.id} />)}
+    <div>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Products/>}/>
+      <Route path="/about" element={<AboutUs/>}/>
+      <Route path="/contacts" element={<Contacts/>}/>
+    </Routes>
+    <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

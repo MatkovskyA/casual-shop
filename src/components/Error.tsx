@@ -4,7 +4,7 @@ interface ErrorMessageProps {
 
 function Error({error}: ErrorMessageProps) {
   return (
-    <p className='text-center'>{error} - Ошибка загрузки данных...</p>
+    <p className='text-center text-red'>{error}</p>
   )
 }
 
