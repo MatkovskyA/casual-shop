@@ -7,14 +7,14 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Products/>}/>
-      <Route path="/about" element={<AboutUs/>}/>
-      <Route path="/contacts" element={<Contacts/>}/>
-    </Routes>
-    <Footer />
+    <div className="container m-auto">
+      <Header />
+        <Routes>
+          <Route path="/" element={<Products/>}/>
+          <Route path="/about" element={<AboutUs/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
+        </Routes>
+      <Footer />
     </div>
   )
 }

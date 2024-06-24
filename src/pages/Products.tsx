@@ -26,7 +26,7 @@ function Products() {
       {modal && <Modal title='Create new product' onClose={() => close()}>
         <CreateProduct onCreate={createHandler}/>
       </Modal>}
-      <button className='fixed bottom-5 right-5 rounded-full bg-red-200 p-4'
+      <button className='fixed bottom-5 right-5 rounded-full bg-red-200 p-4 z-10'
         onClick={() => open()}> Добавь товар +</button>
     </div>
   );
